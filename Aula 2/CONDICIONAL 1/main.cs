@@ -1,28 +1,21 @@
 using System;
 
-class Program
-{
-    public static void Main(string[] args)
-    {
-        const double precoTotal = 20.00;
-        double precoFinal = 0;
-        //Informando a idade do cliente
-        Console.WriteLine("Por favor digite sua idade;: ");
-        int idade = int.Parse(Console.ReadLine());
+class Program {
+  public static void Main (string[] args) {
+    //Solicitando a nota que tirou
+    Console.WriteLine("Insira sua nota (0 a 100): ");
+    int nota = int.Parse(Console.ReadLine());
 
-        //Condições de descontos
-        if (idade < 5)
-        {
-            precoFinal = 0;
-        }
-        else if (idade >= 5 && idade <= 12)
-        {
-            precoFinal = precoTotal * 0.5;
-        } else if (idade >= 13 && idade <= 60){
-            precoFinal = precoTotal;
-        } else if (idade > 60) {
-            precoFinal = precoTotal * 0.7;
-        }
-        Console.WriteLine($"O valor do ingresso é: {precoFinal:F2}");
+    //Verificando se a nota é válida
+    if(nota >= 0 && nota <= 100){
+      //Verificando se a nota é azul
+      if(nota >= 60){
+        Console.WriteLine("Parabéns, você está ótimo !!!");
+      } else {
+        Console.WriteLine("Estude mais, melhore sua nota !!!");
+      } 
+    } else {
+      Console.WriteLine("Nota inválida, Insira outra nota !!!");
     }
+  } 
 }
